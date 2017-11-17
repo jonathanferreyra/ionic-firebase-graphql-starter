@@ -1,0 +1,15 @@
+{
+  "development": {
+    "dialect": "sqlite",
+    "storage": "./data.sqlite",
+    "seederStorage": "json"
+  },
+  "test": {
+    "dialect": "sqlite",
+    "storage": "./data-test.sqlite"
+  },
+  "production": {
+    "dialect": "sqlite",
+    "storage": "./data.sqlite"
+  }
+}
