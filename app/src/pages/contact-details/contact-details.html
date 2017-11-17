@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="remove()">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+      <button ion-button (tap)="edit()">
+        <ion-icon name="create"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <h6>Name</h6>
+    <p>{{contact.name}}</p>
+    <h6>Address</h6>
+    <p>{{contact.address}}</p>
+    <h6>Phone</h6>
+    <p>{{contact.phone}}</p>
+</ion-content>

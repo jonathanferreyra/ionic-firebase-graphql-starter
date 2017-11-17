@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="light">
+    <ion-searchbar
+      (ionInput)="getItems($event)"
+      [(ngModel)]="searchQuery">
+      [placeholder]="Search by name"
+    </ion-searchbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="error" class="center-content error-message">
+    <ion-icon name="sad"></ion-icon>
+    <h5>Connection error with the server</h5>
+  </div>
+  <div *ngIf="isLoading" class="center-content">
+    <ion-spinner text-center></ion-spinner>
+  </div>
+  <div *ngIf="contacts.length == 0" class="center-content">
+    <ion-icon name="search"></ion-icon>
+    <h5>No results to show</h5>
+  </div>
+  <ion-list *ngIf="contacts.length > 0">
+    <ion-item *ngFor="let contact of contacts" (tap)="contactDetails(contact)">
+      <ion-icon md="ios-contact-outline" item-start></ion-icon>
+      <h2>{{contact.name}}</h2>
+      <p>{{contact.phone}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
