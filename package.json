@@ -1,0 +1,44 @@
+{
+  "name": "ionic-firebase-graphql-starter",
+  "version": "1.0.0",
+  "description": "",
+  "homepage":
+    "https://github.com/jonathanferreyra/ionic-firebase-graphql-starter#readme",
+  "bugs": {
+    "url":
+      "https://github.com/jonathanferreyra/ionic-firebase-graphql-starter/issues"
+  },
+  "license": "MIT",
+  "author": "Jonathan Ferreyra",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonathanferreyra/ionic-firebase-graphql-starter.git"
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "predeploy": "yarn package:functions",
+    "deploy": "firebase deploy --only functions",
+    "format":
+      "prettier --write \"functions/**/*{.js, .json}\" && sort-package-json",
+    "postinstall": "cd functions && yarn",
+    "prepackage:functions": "rimraf \"dist/functions\"",
+    "package:functions":
+      "babel \"functions\" --out-dir \"dist/functions\" --copy-files --ignore \"node_modules\"",
+    "postpackage:functions": "cd \"dist/functions\" && yarn",
+    "preserve": "yarn package:functions",
+    "test": "babel \"functions\" --out-dir \"dist/functions\" --copy-files --ignore \"node_modules\" && cd \"dist/functions\" && node server.js",
+    "serve": "firebase serve --only functions"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.3",
+    "prettier": "^1.7.4",
+    "rimraf": "^2.6.2",
+    "sort-package-json": "^1.7.1"
+  },
+  "lint-staged": {
+    "*.{js,json,css}": ["prettier --write", "git add"]
+  }
+}
