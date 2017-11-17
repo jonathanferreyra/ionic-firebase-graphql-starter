@@ -28,10 +28,10 @@ GraphQL: `https://us-central1-<project-name>.cloudfunctions.net/api/graphql?<que
 git clone https://github.com/jonathanferreyra/ionic-graphql-firebase-starter
 cd ionic-graphql-firebase-starter
 
-// install firebase functions packages
+# install firebase functions packages
 cd functions/ && yarn install
 
-// install ionic packages
+# install ionic packages
 cd app/ && yarn install
 ```
 
@@ -62,9 +62,9 @@ After running the first time, you can rerun using `yarn test` or what is the sam
 
 From the app you can try operations: create, edit, update, list & search
 
-<img src="https://raw.github.com/informaticameg/ionic-firebase-graphql-starter/master/app/screen1.png" />
-<img src="https://raw.github.com/informaticameg/ionic-firebase-graphql-starter/master/app/screen2.png" />
-<img src="https://raw.github.com/informaticameg/ionic-firebase-graphql-starter/master/app/screen3.png" />
+<img src="https://raw.github.com/jonathanferreyra/ionic-firebase-graphql-starter/master/app/screen1.png" />
+<img src="https://raw.github.com/jonathanferreyra/ionic-firebase-graphql-starter/master/app/screen2.png" />
+<img src="https://raw.github.com/jonathanferreyra/ionic-firebase-graphql-starter/master/app/screen3.png" />
 
 ## Deploy to Firebase
 
