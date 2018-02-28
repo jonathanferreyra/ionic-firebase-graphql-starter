@@ -22,11 +22,20 @@ GraphiQL: `https://us-central1-<project-name>.cloudfunctions.net/api/graphiql`
 
 GraphQL: `https://us-central1-<project-name>.cloudfunctions.net/api/graphql?<query>`
 
+## Requirements
+
+You need to have installed on your computer:
+
+- [Node.js](https://nodejs.org/en/download/)
+- Yarn (optional) # npm install -g yarn
+- Firebase tools # npm install -g firebase-tools
+
 ## Installation
 
 ```
 git clone https://github.com/jonathanferreyra/ionic-graphql-firebase-starter
 cd ionic-graphql-firebase-starter
+yarn install
 
 # install firebase functions packages
 cd functions/ && yarn install
@@ -35,6 +44,8 @@ cd functions/ && yarn install
 cd app/ && yarn install
 ```
 
+Note: you can use `npm install` instead of `yarn install`
+
 ## Environment
 
 * Node 6.11.1
@@ -42,11 +53,13 @@ cd app/ && yarn install
 ## Setup empty database
 
 ```
-node_modules/.bin/sequelize model:create --name Contact --attributes name:string,address:string,phone:string
+npm install -g sequelize-cli
 
-node_modules/.bin/sequelize db:migrate
+sequelize model:create --name Contact --attributes name:string,address:string,phone:string
 
-node_modules/.bin/sequelize db:seed:all
+sequelize db:migrate
+
+sequelize db:seed:all
 ```
 
 ## Local Development

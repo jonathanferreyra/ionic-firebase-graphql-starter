@@ -6,7 +6,7 @@ export const resolvers = {
     contacts(root, args, context) {
       let args_with_like = {}
       Object.keys(args).map(key => {
-        args_with_like[key] = {$like: '%' + args[key] + '%'}
+        args_with_like[key] = {'like': '%' + args[key] + '%'}
       })
       return models.Contact.findAll({where: args_with_like})
     },
